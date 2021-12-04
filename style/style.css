@@ -57,3 +57,56 @@ footer{
     margin-left:1rem;
     color:white;
 }
+
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E3F4FE;
+    
+}
+
+.navbar ul .linkhome{
+float: right;
+margin-top: -3.1rem;
+margin-right: 2rem;
+}
+.navbar .linkhome a {
+  
+    text-align: center;
+    
+    text-decoration: none;
+}
+.navbar .linkhome a:hover {
+  
+    text-align: center;
+    color: black;
+    background-color:lightgray;
+   padding: 0.5rem;
+   border-radius: 25px;
+   
+    text-decoration: none;
+}
+.navbar ul .srchbar{
+    margin-top: 2rem;
+    
+   
+}
+.navbar ul .srchbar input{   
+    border-radius: 25px;
+    width: 18rem;
+    font-size: small;
+    padding-left: 0.5rem;
+}
+.navbar img{
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+
+}
+.srchicon{
+    opacity: 0.6;
+    text-indent: -29px;
+}
