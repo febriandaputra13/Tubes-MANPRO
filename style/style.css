@@ -1,18 +1,146 @@
-.kotak{
+.kotak {
     background-color: #1D71F2;
     margin-right: 30px;
 }
 
-.suhu{
+.suhu {
     flex: auto;
 }
 
-.kotakluar{
+.kotakluar {
     padding: 30px;
     background-color: white;
     margin-left: 20rem;
 }
 
-.font{
+.font {
     color: white;
+}
+
+
+
+
+nav {
+    width: 100%;
+    min-height: 10%;
+    height: auto;
+
+}
+
+#content {
+    min-height: 75%;
+    height: auto;
+}
+
+footer {
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    background-color: #19C3FB;
+    display: flex;
+    flex-direction: row;
+}
+
+#footerKiri {
+    height: auto;
+    width: 25%;
+    border-right: 3px solid;
+    border-color: white;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#logoFooter img {
+    width: 16%;
+}
+
+#footerKiri p {
+    color: white;
+    font-size: 0.65rem;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+#footerTengah {
+    height: auto;
+    width: 50%;
+    border-right: 3px solid white;
+
+}
+
+#footerTengah img {
+    width: 10%;
+    margin-left: 45%;
+}
+
+#footerTengah p {
+    text-align: center;
+    font-size: 0.65rem;
+    margin: 0;
+    margin-left: 1rem;
+    color: white;
+}
+
+
+
+
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E3F4FE;
+}
+
+.navbar ul .linkhome {
+    float: right;
+    margin-top: -4.1rem;
+    margin-right: 2rem;
+}
+
+.navbar .linkhome a {
+
+    text-align: center;
+
+    text-decoration: none;
+}
+
+.navbar .linkhome a:hover {
+
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+    padding: 0.5rem;
+    border-radius: 25px;
+
+    text-decoration: none;
+}
+
+.navbar ul .srchbar {
+    margin-top: 2rem;
+
+
+}
+
+.navbar ul .srchbar input {
+    border-radius: 25px;
+    width: 18rem;
+    font-size: small;
+    padding-left: 0.5rem;
+}
+
+.navbar img {
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+
+}
+
+.srchicon {
+    opacity: 0.6;
+    text-indent: -2rem;
 }
