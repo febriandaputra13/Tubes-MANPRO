@@ -147,3 +147,23 @@ footer {
     opacity: 0.6;
     text-indent: -2rem;
 }
+
+.forecast{
+    background-color: #E3F4FE;
+    width: 28%;
+    padding: 1.5rem;
+    margin-left: 36%;
+    margin-top: 3%;
+    border-radius: 20px;
+}
+
+.btnforecast{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    margin-top: 1rem;
+}
+
+.ramalan{
+    background-color: #FCD447;
+    height: 70%;
+    padding-top: 5%;
+}
