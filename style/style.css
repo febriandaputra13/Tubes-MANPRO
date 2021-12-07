@@ -1,3 +1,24 @@
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  tr:nth-child(odd) {
+    background-color: white;
+  }
+
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+  }
+
 .kotak {
     background-color: #1D71F2;
     margin-right: 2rem;
@@ -9,8 +30,11 @@
 
 .kotakluar {
     padding: 30px;
+
     background-color: white;
     margin-left: 20rem;
+    background-color: #FFFAE0;
+    margin-left: 25rem;
 }
 
 .font {
@@ -30,6 +54,7 @@ nav {
 #content {
     min-height: 75%;
     height: auto;
+    background-color: #FFFAE0;
 }
  /* cuaca */
 td, th {
