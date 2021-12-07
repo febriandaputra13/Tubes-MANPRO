@@ -1,16 +1,16 @@
-td, th {
+#tabel td,th {
     border: 1px solid black;
     text-align: left;
     padding: 8px;
   }
   
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+  #tabel tr:nth-child(even) {
+background-color: #dddddd;
+}
 
-  tr:nth-child(odd) {
-    background-color: white;
-  }
+#tabel tr:nth-child(odd) {
+background-color: white;
+}
 
 .kotak {
     background-color: #1D71F2;
@@ -21,7 +21,7 @@ td, th {
     flex: auto;
 }
 
-table {
+#tabel {
     margin: auto;
     border-collapse: collapse;
     width: 80%;
