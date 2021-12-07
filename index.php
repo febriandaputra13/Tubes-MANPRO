@@ -14,9 +14,10 @@
     <nav class="navbar">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
-            <form>
-                <li class=" w3-display-topmiddle srchbar"> <input type="text"
-                        placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i> </li>
+            <form action="cuaca.php" method="get">
+                <label for="city"></label>
+                <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
+                        placeholder="Enter a Country, State, or City"> <button><i class="fa fa-search srchicon"></i></button> </li>
             </form>
             <li class="linkhome"><a href="">HOMEPAGE</a></li>
         </ul>
@@ -75,91 +76,60 @@
         </div>
 
         <div class="ramalan">
-            <h2 style="font-weight: bold; margin-bottom: 3%;">WEATHER FORECAST</h2>
-            
+            <h2 style="font-weight: bold;">WEATHER FORECAST</h2>
 
-            <div class="forecastResult" style="margin-left: 10rem;">
+            <div class="forecast">
+                <form action="weather_prediction.php" method="get">
+                    <table>
+                        <tr>
+                            <td style="width: 50%;">
+                                <label for="rainfall">Rainfall</label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 80%;" name="rainfall" id="rainfall">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;">
+                                <label for="sunshine">Sunshine</label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 80%;" name="sunshine" id="sunshine">
+                            </td>
+                        </tr>
 
-                <div class="forecast2" style="margin-right: 4%;">
-                    <form action="" >
-                        <table>
-                            <tr>
-                                <td style="width: 50%;">
-                                    <label for="rainfall">Rainfall</label>
-                                </td>
-                                <td>
-                                    <input type="text" style="width: 80%;" name="rainfall" id="rainfall">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width: 50%;">
-                                    <label for="sunshine">Sunshine</label>
-                                </td>
-                                <td>
-                                    <input type="text" style="width: 80%;" name="sunshine" id="sunshine">
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td>
-                                    <label for="humidity9am">Humidity 9 A.M.</label>
-                                </td>
-                                <td>
-                                    <input type="text" style="width: 80%;" name="humidity9am" id="humidity9am">
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                <td>
-                                    <label for="humidity3pm">Humidity 3 P.M.</label>
-                                </td>
-                                <td>
-                                    <input type="text" style="width: 80%;" name="humidity3pm" id="humidity3pm">
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <label for="humidity9am">Humidity 9 A.M.</label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 80%;" name="humidity9am" id="humidity9am">
+                            </td>
+                        </tr>
 
-                            <tr>
-                                <td>
-                                    <label for="cloud3pm">Cloud 3 P.M.</label>
-                                </td>
-                                <td>
-                                    <input type="text" style="width: 80%;" name="cloud3pm" id="cloud3pm">
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                <label for="humidity3pm">Humidity 3 P.M.</label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 80%;" name="humidity3pm" id="humidity3pm">
+                            </td>
+                        </tr>
 
-                        </table>
-    
-                        <button class="w3-button w3-white w3-round-xxlarge btnforecast" type="submit">submit</button>
-                    </form>
-                </div>
-                <div class="predictionToday" style="width: 15%; margin-right:5%">
-                    <h2>Today</h2>
-                    <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
-                        <h3 class="font">Sydney</h3>
-                        <img src="images/hujanbadai.png" style="width: 50%;" alt="">
-                        <div class="suhu w3-center">
-                            <img src="images/temperature.png" style="width: 7%;" alt="">
-                            <span class="font">20 °C</span>
-                        </div>
-                        <h3 class="w3-center font">Storm</h3>
-                    </div>
-                </div>
-                    
-                <div class="predictionTommorrow" style="width: 15%;">
-                    <h2>Tommorrow</h2>
-                    <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
-                        <h3 class="font">Sydney</h3>
-                        <img src="images/hujanbadai.png" style="width: 50%;" alt="">
-                        <div class="suhu w3-center">
-                            <img src="images/temperature.png" style="width: 7%;" alt="">
-                            <span class="font">20 °C</span>
-                        </div>
-                        <h3 class="w3-center font">Storm</h3>
-                    </div>
+                        <tr>
+                            <td>
+                                <label for="cloud3pm">Cloud 3 P.M.</label>
+                            </td>
+                            <td>
+                                <input type="text" style="width: 80%;" name="cloud3pm" id="cloud3pm">
+                            </td>
+                        </tr>
 
-                </div>
+                    </table>
+
+                    <button class="w3-button w3-white w3-round-xxlarge btnforecast" type="submit">submit</button>
+                </form>
             </div>
-            
         </div>
     </div>
 

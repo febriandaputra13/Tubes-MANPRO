@@ -111,22 +111,7 @@ footer {
 
 
 
-/* cuaca */
-.navbar ul td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
 
-  table {
-    margin: auto;
-    border-collapse: collapse;
-    width: 80%;
-  }
 
 /* aldo */
   .navbar ul {
@@ -237,7 +222,7 @@ footer {
     margin: 0;
     margin-left: 1rem;
     color: white;
-=======
+}
 .forecast{
     background-color: #E3F4FE;
     width: 28%;

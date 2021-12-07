@@ -9,6 +9,79 @@
 </head>
 <body>
     
+<?php
+    $arr=array(
+        "Albury",
+        "Badgerys Creek",
+        "Cobar",
+        "Coffs Harbour",
+        "Moree",
+        "Newcastle",
+        "NorahHead",
+        "Norfolk Island",
+        "Penrith",
+        "Richmond",
+        "Sydney",
+        "Sydney Airport",
+        "WaggaWagga",
+        "Williamtown",
+        "Wollongong",
+        "Canberra",
+        "Tuggeranong",
+        "Mount Ginini",
+        "Ballarat",
+        "Bendigo",
+        "Sale",
+        "Melbourne Airport",
+        "Melbourne",
+        "Mildura",
+        "Nhil",
+        "Portland",
+        "Watsonia",
+        "Dartmoor",
+        "Brisbane",
+        "Cairns",
+        "GoldCoast",
+        "Townsville",
+        "Adelaide",
+        "Mount Gambier",
+        "Nuriootpa",
+        "Woomera",
+        "Albany",
+        "Witchcliffe",
+        "Pearce RAAF",
+        "Perth Airport",
+        "Perth",
+        "Salmon Gums",
+        "Walpole",
+        "Hobart",
+        "Launceston",
+        "Alice Springs",
+        "Darwin",
+        "Katherine",
+        "Uluru"
+    );
+    if(isset($_GET["city"])){
+        $city=$_GET["city"];
+        $ada=false;
+        foreach($arr as $c){
+            if($c==$city){
+                $ada=true;
+                break;
+            }
+        }
+        if($ada==false){
+            echo "<script>
+            window.location.href='whoops.php'
+            </script>";
+        }
+        else{
+            $namaCity=$city;
+        }
+    }
+    
+?>
+
     <nav class="navbar">
         <ul>
 
@@ -24,7 +97,13 @@
     
 
     <div id="content" class="w3-center">
-        <h1>CANBERRA</h1>
+        <h1>
+            <?php
+                if($ada==true){
+                    echo "$namaCity";
+                }
+            ?>
+        </h1>
         <h3 style="color: black; font-weight: bold;">Weather Info</h3>
 
         <div class="" style="display:flex; ">
