@@ -14,7 +14,7 @@ background-color: white;
 
 .kotak {
     background-color: #1D71F2;
-    margin-right: 30px;
+    margin-right: 2rem;
 }
 
 .suhu {
@@ -40,6 +40,7 @@ background-color: white;
 .contentweather{
     margin-left: 25%;
 }
+
 
 
 
@@ -110,8 +111,25 @@ footer {
 
 
 
+/* cuaca */
+.navbar ul td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 
-.navbar ul {
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+  }
+
+/* aldo */
+  .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -168,6 +186,58 @@ footer {
     text-indent: -2rem;
 }
 
+
+/* lukas */
+footer {
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    background-color: #19C3FB;
+    display: flex;
+    flex-direction: row;
+}
+
+#footerKiri {
+    height: auto;
+    width: 25%;
+    border-right: 3px solid;
+    border-color: white;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#logoFooter img {
+    width: 16%;
+}
+
+#footerKiri p {
+    color: white;
+    font-size: 0.65rem;
+    margin: 0;
+    margin-left: 1rem;
+}
+
+#footerTengah {
+    height: auto;
+    width: 50%;
+    border-right: 3px solid white;
+
+}
+
+#footerTengah img {
+    width: 10%;
+    margin-left: 45%;
+}
+
+#footerTengah p {
+    text-align: center;
+    font-size: 0.65rem;
+    margin: 0;
+    margin-left: 1rem;
+    color: white;
+=======
 .forecast{
     background-color: #E3F4FE;
     width: 28%;
@@ -202,4 +272,5 @@ footer {
     display :flex;
     flex-direction: row;
     
+
 }
