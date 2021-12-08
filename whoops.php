@@ -9,7 +9,7 @@ city not found
 
 
 <!-- https://trendoceans.com/how-to-run-a-python-script-from-php/ -->
-
+<!-- https://stackoverflow.com/questions/19781768/executing-python-script-with-php-variables/19781913 -->
 <?php
  $var1=1;
  $var2=2;
