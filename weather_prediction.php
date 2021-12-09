@@ -11,11 +11,23 @@
 
 <body>
 <?php
-    if(isset($_GET["rainfall"])){
-        var_dump($_GET);
-    }
-    a=proses python ($get rain fall)
+    // if(isset($_GET["rainfall"])){
+    //     var_dump($_GET);
+    // }
+    
+    // if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
+    //     $rainfall=$_GET["rainfall"];
+    //     $sunshine=$_GET["sunshine"];
+    //     $humidity9am=$_GET["humidity9am"];
+    //     $humidity3pm=$_GET["humidity3pm"];
+    //     $cloud3pm=$_GET["cloud3pm"];
+    //     $output=passthru("python learning_kkn.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
+    // }
 
+    // $var1=1;
+    // $var2=2;
+    // $output=passthru("python test.py $var1 $var2");
+    //echo "$output";
 ?>
 
 <?php
@@ -98,7 +110,7 @@
                 <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
                         placeholder="Enter a Country, State, or City"> <button> <i class="fa fa-search srchicon"></i></button> </li>
             </form>
-            <li class="linkhome"><a href="">HOMEPAGE</a></li>
+            <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
     </nav>
 
@@ -161,7 +173,7 @@
             <div class="forecastResult" style="margin-left: 10rem;">
 
                 <div class="forecast2" style="margin-right: 4%;">
-                    <form action="" >
+                    <form action="weather_prediction.php" method="get">
                         <table>
                             <tr>
                                 <td style="width: 50%;">
@@ -221,7 +233,18 @@
                             <img src="images/temperature.png" style="width: 7%;" alt="">
                             <span class="font">20 °C</span>
                         </div>
-                        <h3 class="w3-center font">Storm</h3>
+                        <h3 class="w3-center font"> 
+                            <?php 
+                                if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
+                                    $rainfall=$_GET["rainfall"];
+                                    $sunshine=$_GET["sunshine"];
+                                    $humidity9am=$_GET["humidity9am"];
+                                    $humidity3pm=$_GET["humidity3pm"];
+                                    $cloud3pm=$_GET["cloud3pm"];
+                                    $output=passthru("python predict_today.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
+                                } 
+                            ?> 
+                        </h3>
                     </div>
                 </div>
                     
@@ -234,7 +257,19 @@
                             <img src="images/temperature.png" style="width: 7%;" alt="">
                             <span class="font">20 °C</span>
                         </div>
-                        <h3 class="w3-center font">Storm</h3>
+                        <h3 class="w3-center font">
+                            <?php 
+                                    if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
+                                        $rainfall=$_GET["rainfall"];
+                                        $sunshine=$_GET["sunshine"];
+                                        $humidity9am=$_GET["humidity9am"];
+                                        $humidity3pm=$_GET["humidity3pm"];
+                                        $cloud3pm=$_GET["cloud3pm"];
+                                        $a=passthru("python predict_tommorrow.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
+                                    } 
+                                ?> 
+
+                        </h3>
                     </div>
 
                 </div>
