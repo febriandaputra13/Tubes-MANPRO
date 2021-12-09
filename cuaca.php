@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <title>Weather Report</title>
 </head>
 <body>
     
@@ -91,7 +91,7 @@
                 <li class=" w3-display-topmiddle srchbar"> <input type="text"
                         placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i> </li>
             </form>
-            <li class="linkhome"><a href="">HOMEPAGE</a></li>
+            <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
     </nav>
     
