@@ -11,6 +11,7 @@
 
 <body>
 
+
     <nav class="navbar">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
@@ -30,47 +31,76 @@
                 <!-- COL 1 -->
                 <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerahberawan.png" style="width: 50%;" alt="">
+                    <h3 class="font"><?php $kota = "Sydney"; echo "$kota";?></h3>
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+                    
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php $suhu = "29 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Cloudy</h3>
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                 </div>
                 <!-- COL 2 -->
                 <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">35 °C</span>
+                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
 
                 </div>
                 <!-- COL 3 -->
                 <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/hujanbadai.png" style="width: 50%;" alt="">
+                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+                    <?php
+                        $cuaca = "Cerah";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">20 °C</span>
+                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Storm</h3>
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
 
                 </div>
                 <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php $suhu = "25 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                 </div>
             </div>
         </div>
