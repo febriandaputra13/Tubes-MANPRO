@@ -12,12 +12,15 @@
 
     <nav class="navbar">
         <ul>
-
             <li><img src="images/logo.png" alt=""></li>
-
-            <form>
-                <li class=" w3-display-topmiddle srchbar"> <input type="text"
-                        placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i> </li>
+            <form action="cuaca.php" method="get">
+                <label for="city"></label>
+                <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
+                        placeholder="Enter a Country, State, or City"> 
+                        <button style="background-color:Transparent; width:1rem; " >
+                            <i style="margin-left:1rem;" class="fa fa-search srchicon"></i>
+                        </button> 
+                </li>
             </form>
             <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
