@@ -106,58 +106,108 @@
                 
                 <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
+
                     <form action="cuaca.php" method="get">
                     <h3 class="font"><?php echo($city1) ?></h3>
                     <img src="images/cerahberawan.png" style="width: 50%;" alt="">
+
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+                    
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php $suhu = "29 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Cloudy</h3>
+
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                     <input type="hidden" value="<?php echo($city1) ?>" name="city" style="display:'none'">
                     </form>
+
                 </div>
                 <!-- COL 2 -->
                 <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
+
                     <form action="cuaca.php" method="get">
                     <h3 class="font"><?php echo($city2) ?></h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+                    
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">35 °C</span>
+                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+
+                   <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                     <input type="hidden" value="<?php echo($city2) ?>" name="city" style="display:'none'">
                     </form>
+
                 </div>
                 <!-- COL 3 -->
                 <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
+
                     <form action="cuaca.php" method="get">
                     <h3 class="font"><?php echo($city3) ?></h3>
-                    <img src="images/hujanbadai.png" style="width: 50%;" alt="">
+                   
+                    <?php
+                        $cuaca = "Cerah";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">20 °C</span>
+                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Storm</h3>
+
+                     <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                     <input type="hidden" value="<?php echo($city3) ?>" name="city" style="display:'none'">
                     </form>
+
                 </div>
                 <!-- COL 4 -->
                 <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
+
                     <form action="cuaca.php" method="get">
                     <h3 class="font"><?php echo($city4) ?></h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+                   
+                    <?php
+                        $cuaca = "Hujan";
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php $suhu = "25 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+
+                      <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
                     <input type="hidden" value="<?php echo($city4) ?>" name="city" style="display:'none'">
                     </form>
+
                 </div>
             </div>
         </div>
