@@ -18,34 +18,38 @@
 
 
 
-            // $res=passthru("python test.py");
-            // echo "$res";
-            $var1=11;
-            $var2=222;
-            $var3=69;
-            $command=escapeshellcmd("python test.py $var1 $var2 $var3");
-            $res=shell_exec($command);
-            // echo($res[4]);
-            // if($res[4]==' '){
-            //     echo "space";
+            // // $res=passthru("python test.py");
+            // // echo "$res";
+            // $var1=11;
+            // $var2=222;
+            // $var3=69;
+            // $command=escapeshellcmd("python test.py $var1 $var2 $var3");
+            // $res=shell_exec($command);
+            // // echo($res[4]);
+            // // if($res[4]==' '){
+            // //     echo "space";
+            // // }
+            // $str="";
+            // $i=1;
+            // while($i<strlen($res)){
+            //     while(($res[$i]!=','&&$res[$i]!=']'&&$res[$i]!=' ')&&$i<13){
+            //         $str=$str.$res[$i];
+            //          $i+=1;
+            //     }
+            //     if($str!=""){
+            //         $angka=(int)$str;
+            //         $str="";
+            //         echo "$angka\n";
+            //     }
+            //     $i+=1;
             // }
-            $str="";
-            $i=1;
-            while($i<strlen($res)){
-                while(($res[$i]!=','&&$res[$i]!=']'&&$res[$i]!=' ')&&$i<13){
-                    $str=$str.$res[$i];
-                     $i+=1;
-                }
-                if($str!=""){
-                    $angka=(int)$str;
-                    $str="";
-                    echo "$angka\n";
-                }
-                $i+=1;
-            }
             
        ?>
-
+        <?php
+            $ket="Suhu";
+            $kota="Uluru";
+            passthru("python data_aus.py $ket $kota");
+        ?>
         
     </div>
 
