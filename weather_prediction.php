@@ -38,13 +38,13 @@
         "Coffs Harbour",
         "Moree",
         "Newcastle",
-        "NorahHead",
+        "Norah Head",
         "Norfolk Island",
         "Penrith",
         "Richmond",
         "Sydney",
         "Sydney Airport",
-        "WaggaWagga",
+        "Wagga Wagga",
         "Williamtown",
         "Wollongong",
         "Canberra",
@@ -62,7 +62,7 @@
         "Dartmoor",
         "Brisbane",
         "Cairns",
-        "GoldCoast",
+        "Gold Coast",
         "Townsville",
         "Adelaide",
         "Mount Gambier",
@@ -108,7 +108,7 @@
             <form action="cuaca.php" method="get">
                 <label for="city"></label>
                 <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
-                        placeholder="Enter a Country, State, or City"> <button> <i class="fa fa-search srchicon"></i></button> </li>
+                        placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i></li>
             </form>
             <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
@@ -221,7 +221,7 @@
 
                         </table>
     
-                        <button class="w3-button w3-white w3-round-xxlarge btnforecast" type="submit">submit</button>
+                        <button class="w3-button w3-white w3-round-xxlarge btnforecast"  type="submit"  >SUBMIT</button>
                     </form>
                 </div>
                 <div class="predictionToday" style="width: 15%; margin-right:5%">

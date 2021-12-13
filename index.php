@@ -8,7 +8,77 @@
     <link rel="stylesheet" href="style/style.css">
     <title>Homepage</title>
 </head>
+<?php
+    $arr=array(
+        "Albury",
+        "Badgerys Creek",
+        "Cobar",
+        "Coffs Harbour",
+        "Moree",
+        "Newcastle",
+        "Norah Head",
+        "Norfolk Island",
+        "Penrith",
+        "Richmond",
+        "Sydney",
+        "Sydney Airport",
+        "Wagga Wagga",
+        "Williamtown",
+        "Wollongong",
+        "Canberra",
+        "Tuggeranong",
+        "Mount Ginini",
+        "Ballarat",
+        "Bendigo",
+        "Sale",
+        "Melbourne Airport",
+        "Melbourne",
+        "Mildura",
+        "Nhil",
+        "Portland",
+        "Watsonia",
+        "Dartmoor",
+        "Brisbane",
+        "Cairns",
+        "Gold Coast",
+        "Townsville",
+        "Adelaide",
+        "Mount Gambier",
+        "Nuriootpa",
+        "Woomera",
+        "Albany",
+        "Witchcliffe",
+        "Pearce RAAF",
+        "Perth Airport",
+        "Perth",
+        "Salmon Gums",
+        "Walpole",
+        "Hobart",
+        "Launceston",
+        "Alice Springs",
+        "Darwin",
+        "Katherine",
+        "Uluru"
+    );
 
+   $city1=$arr[rand(0,48)];
+
+   $city2=$arr[rand(0,48)];
+   //while ini buat supaya city 2 ga bakal sama kaya city 1
+   while($city2==$city1){
+    $city2=$arr[rand(0,48)];
+   }
+
+   $city3=$arr[rand(0,48)];
+   while($city3==$city1&&$city3==$city2){
+    $city3=$arr[rand(0,48)];
+   }
+
+   $city4=$arr[rand(0,48)];
+   while($city4==$city3&&$city4==$city2&&$city4==$city1){
+    $city4=$arr[rand(0,48)];
+   }
+?>
 <body>
 
 
@@ -17,21 +87,30 @@
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
                 <label for="city"></label>
-                <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
-                        placeholder="Enter a Country, State, or City"> <button><i class="fa fa-search srchicon"></i></button> </li>
+                <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
+                        placeholder="Enter a Country, State, or City"> 
+                        <button style="background-color:Transparent; width:1rem; " >
+                            <i style="margin-left:1rem;" class="fa fa-search srchicon"></i>
+                        </button> 
+                </li>
             </form>
-            <li class="linkhome"><a href="">HOMEPAGE</a></li>
+            <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
     </nav>
 
     <div id="content" class="w3-center">
         <h1>WEATHER TODAY</h1>
         <div class="kotakluar w3-center">
-            <div class="" style="display:flex;">
+            <div class="cardContainer" style="display:flex;">
                 <!-- COL 1 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font"><?php $kota = "Sydney"; echo "$kota";?></h3>
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city1) ?></h3>
+                    <img src="images/cerahberawan.png" style="width: 50%;" alt="">
+
                     <?php
                         $cuaca = "Hujan";
                         if($cuaca == "Cerah"){
@@ -41,16 +120,24 @@
                         }
                     ?>
                     
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $suhu = "29 °C"; echo "$suhu";?></span>
                     </div>
+
                     <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city1) ?>" name="city" style="display:'none'">
+                    </form>
+
                 </div>
                 <!-- COL 2 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city2) ?></h3>
+                    
                     <?php
                         $cuaca = "Hujan";
                         if($cuaca == "Cerah"){
@@ -59,17 +146,24 @@
                             echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
                         }
                     ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+
+                   <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city2) ?>" name="city" style="display:'none'">
+                    </form>
 
                 </div>
                 <!-- COL 3 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city3) ?></h3>
+                   
                     <?php
                         $cuaca = "Cerah";
                         if($cuaca == "Cerah"){
@@ -78,16 +172,24 @@
                             echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
                         }
                     ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+
+                     <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city3) ?>" name="city" style="display:'none'">
+                    </form>
 
                 </div>
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <!-- COL 4 -->
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font"><?php $kota = "Melbourne"; echo "$kota";?></h3>
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city4) ?></h3>
+                   
                     <?php
                         $cuaca = "Hujan";
                         if($cuaca == "Cerah"){
@@ -96,11 +198,16 @@
                             echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
                         }
                     ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $suhu = "25 °C"; echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+
+                      <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city4) ?>" name="city" style="display:'none'">
+                    </form>
+
                 </div>
             </div>
         </div>
@@ -184,6 +291,19 @@
                 Disclaimer</p>
         </div>
     </footer>
+
+    <script>
+        let container = document.querySelector('.cardContainer').children;
+        console.log(container);
+        for (i = 0; i < container.length; i++) {
+            let card = container[i].firstElementChild;
+            console.log(card);
+            container[i].addEventListener("click", function () {
+                card.submit();
+            })
+        }
+    </script>
+
 </body>
 
 </html>
