@@ -17,8 +17,17 @@
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
                 <label for="city"></label>
+<<<<<<< Updated upstream
                 <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
                         placeholder="Enter a Country, State, or City"><i class="fa fa-search srchicon"></i> </li>
+=======
+                <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
+                        placeholder="Enter a Country, State, or City"> 
+                      
+                            <i  class="fa fa-search srchicon"></i>
+                         
+                </li>
+>>>>>>> Stashed changes
             </form>
             <li class="linkhome"><a href="">HOMEPAGE</a></li>
         </ul>
