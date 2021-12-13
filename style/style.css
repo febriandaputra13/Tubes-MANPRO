@@ -101,12 +101,12 @@ margin-right: 2rem;
     padding-left: 0.5rem;
 }
 .navbar img{
-    width: 5rem;
-    height: 5rem;
+    width: 5.1rem;
+    height: 5.1rem;
     padding: 0;
 
 }
 .srchicon{
-    opacity: 0.6;
-    text-indent: -29px;
+    opacity: 0.8;
+    text-indent: -2rem;
 }
