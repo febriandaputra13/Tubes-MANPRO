@@ -52,9 +52,13 @@ footer{
 
 #footerTengah p{
     text-align: center;
+    
     font-size:0.65rem;
+
     margin:0;
+
     margin-left:1rem;
+
     color:white;
 }
 
@@ -62,8 +66,13 @@ footer{
 .navbar ul{
     list-style-type: none;
     margin: 0;
+
+
     padding: 0;
+
+
     overflow: hidden;
+
     background-color: #E3F4FE;
     
 }
@@ -81,15 +90,24 @@ margin-right: 2rem;
 }
 .navbar .linkhome a:hover {
   
+
+
     text-align: center;
+    
+    
     color: black;
+    
+    
     background-color:lightgray;
    padding: 0.5rem;
+
+
    border-radius: 25px;
    
     text-decoration: none;
 }
 .navbar ul .srchbar{
+
     margin-top: 2rem;
     
    
