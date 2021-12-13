@@ -42,7 +42,6 @@
         "Dartmoor",
         "Brisbane",
         "Cairns",
-        "GoldCoast",
         "Gold Coast",
         "Townsville",
         "Adelaide",

@@ -14,9 +14,17 @@ data = pd.read_csv('data/weatherAUS.csv')
 
 
 def getTemp(kota):
-    df_kota = data.loc[data['Location'] == kota]
-    temp = df_kota.loc[len(df_kota)-1]['MinTemp']
+    df_kota = data.loc[data['Location'] == kota] 
+    temp = df_kota.iloc[-1]['MinTemp']
     return temp
+
+def getCuaca(kota):
+    df_kota = data.loc[data['Location'] == kota] 
+    isHjn = df_kota.iloc[-1]['RainToday']
+    if(isHjn == 'No'):
+        return 'Cerah'
+    else:
+        return 'Hujan'
 
 
 def getCuaca(kota):
