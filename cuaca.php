@@ -10,6 +10,7 @@
 <body>
     
 <?php
+    session_start();
     $arr=array(
         "Albury",
         "Badgerys Creek",
@@ -42,6 +43,7 @@
         "Brisbane",
         "Cairns",
         "GoldCoast",
+        "Gold Coast",
         "Townsville",
         "Adelaide",
         "Mount Gambier",
@@ -62,10 +64,9 @@
         "Uluru"
     );
 
-    
+    $ada=false;    
     if(isset($_GET["city"])){
         $city=$_GET["city"];
-        $ada=false;
         foreach($arr as $c){
             if($c==$city){
                 $ada=true;
@@ -104,8 +105,12 @@
     <div id="content" class="w3-center">
         <h1>
             <?php
-                if($ada==true){
+                if(!is_null($ada) && $ada==true){
+                    $_SESSION["city"] = $namaCity;
                     echo "$namaCity";
+                }else if(isset($_SESSION["city"])){
+                    echo $_SESSION["city"];
+                    $namaCity = $_SESSION["city"];
                 }
             ?>
         </h1>
@@ -119,7 +124,7 @@
 
             <div class="" style="margin-left:10rem;">
                 <h2 style="color: black; font-weight: bold;">Range of Date</h2>
-                <form action="">
+                <form action="cuaca.php" method="POST">
                     <label for="from">From:</label>
                     <input type="date" id="from" name="from">
                     
@@ -131,6 +136,7 @@
         </div>
 
         <div>
+            
             <h2 style="color: black; font-weight: bold;">Table Info</h2>
 
             <table id="tabel">
@@ -142,6 +148,50 @@
                   <th>Humidity</th>
                   <th>Rainfall</th>
                 </tr>
+
+                <!-- <?php
+                    $ket1 = 'Suhu'; $ket2 = 'WindSpeed'; $ket3 = 'Humidity'; $ket4 = 'Rainfall';
+                    if(isset($_POST["from"]) && isset($_POST["to"])){
+                        // ini klo udah masukkin rentang tanggalnya
+                        $start = $_POST["from"]; $end = $_POST["to"];   //minta tolong dikoreksi ya tktnya salah
+                        $diff = date_diff($end,$start)->format("%a") ;  //nyari selisih rentang tanggal
+                        for($i = 0; $i < $diff; $i++){                  //looping tabel
+                            date_add($start,date_interval_create_from_date_string("1 days"));       //tanggalnya nambah 1 hari (mulai dari start) tiap kali looping
+                            $tanggal = date_format($start,"m/d/Y");                                 //kan kalo di csv format nya bulan/tgl/thn jadi harus di konv (defaultnya thn-bln-tgl)
+                            //ini bwt nampilin atribut bwt tiap tanggal, gtw hrs pake passthru ato shell_exec :D
+                            $suhu = passthru("python data_aus.py $ket1 $namaCity $tanggal");
+                            $wind = passthru("python data_aus.py $ket2 $namaCity $tanggal");
+                            $humid = passthru("python data_aus.py $ket3 $namaCity $tanggal");
+                            $rainfall = $suhu = passthru("python data_aus.py $ket4 $namaCity $tanggal");
+                            echo "
+                            <tr>
+                                <td>$tanggal</td>
+                                <td>$suhu °C</td>
+                                <td>$wind km/h</td>
+                                <td>$humid %</td>
+                                <td>$rainfall mm</td>
+                            </tr>
+                            ";
+                        }
+
+                    }else{
+                        //klo ini diambil berdasarkan tanggal paling terakhir dari csvnya
+                        $tanggal = passthru("python data_aus.py $namaCity");
+                        $suhu = passthru("python data_aus.py $ket1 $namaCity $tanggal");
+                        $wind = passthru("python data_aus.py $ket2 $namaCity $tanggal");
+                        $humid = passthru("python data_aus.py $ket3 $namaCity $tanggal");
+                        $rainfall = $suhu = passthru("python data_aus.py $ket4 $namaCity $tanggal");
+                        echo "
+                        <tr>
+                            <td>$tanggal</td>
+                            <td>$suhu °C</td>
+                            <td>$wind km/h</td>
+                            <td>$humid %</td>
+                            <td>$rainfall mm</td>
+                        </tr>
+                        ";
+                }
+                ?> -->
                 <tr>
                   <td>23 Nov 2021</td>
                   <td>20 °C</td>
