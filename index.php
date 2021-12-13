@@ -109,10 +109,11 @@
 
                     <form action="cuaca.php" method="get">
                     <h3 class="font"><?php echo($city1) ?></h3>
-                    <img src="images/cerahberawan.png" style="width: 50%;" alt="">
 
                     <?php
-                        $cuaca = "Hujan";
+                        // $cuaca = "Hujan";
+                        $ket = 'Cuaca';
+                        $cuaca = passthru("python data_aus.py $ket $city1");
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -123,7 +124,10 @@
 
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font"><?php $suhu = "29 °C"; echo "$suhu";?></span>
+                        <span class="font"><?php 
+                        $ket = 'Suhu';
+                        $suhu = passthru("python data_aus.py $ket $city1");
+                        echo "$suhu";?></span>
                     </div>
 
                     <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
@@ -139,7 +143,8 @@
                     <h3 class="font"><?php echo($city2) ?></h3>
                     
                     <?php
-                        $cuaca = "Hujan";
+                        $ket = 'Cuaca';
+                        $cuaca = passthru("python data_aus.py $ket $city2");
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -149,7 +154,9 @@
 
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $suhu = passthru("python data_aus.py $ket $city2");
+                        echo "$suhu";?></span>
                     </div>
 
                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
@@ -165,7 +172,8 @@
                     <h3 class="font"><?php echo($city3) ?></h3>
                    
                     <?php
-                        $cuaca = "Cerah";
+                        $ket = 'Cuaca';
+                        $cuaca = passthru("python data_aus.py $ket $city3");
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -175,7 +183,9 @@
 
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font"><?php $suhu = "35 °C"; echo "$suhu";?></span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $suhu = passthru("python data_aus.py $ket $city3");
+                        echo "$suhu";?></span>
                     </div>
 
                      <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
@@ -191,7 +201,8 @@
                     <h3 class="font"><?php echo($city4) ?></h3>
                    
                     <?php
-                        $cuaca = "Hujan";
+                        $ket = 'Cuaca';
+                        $cuaca = passthru("python data_aus.py $ket $city4");
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -201,7 +212,9 @@
 
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font"><?php $suhu = "25 °C"; echo "$suhu";?></span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $suhu = passthru("python data_aus.py $ket $city4");
+                        echo "$suhu";?></span>
                     </div>
 
                       <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
