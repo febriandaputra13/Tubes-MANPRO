@@ -9,27 +9,27 @@ import sys
 
 
 data = pd.read_csv('data/weatherAUS.csv')
- 
-# Calling DataFrame constructor on list
 
-          
+# Calling DataFrame constructor on list
 
 
 def getTemp(kota):
-    df_kota = data.loc[data['Location'] == kota] 
+    df_kota = data.loc[data['Location'] == kota]
     temp = df_kota.loc[len(df_kota)-1]['MinTemp']
     return temp
 
+
 def getCuaca(kota):
-    df_kota = data.loc[data['Location'] == kota] 
+    df_kota = data.loc[data['Location'] == kota]
     isHjn = df_kota.loc[len(df_kota)-1]['RainToday']
     if(isHjn == 'No'):
         return 'Cerah'
     else:
         return 'Hujan'
-    
+
+
 def getTempDate(kota, tanggal):
-    df_kota = data.loc[data['Location'] == kota] 
+    df_kota = data.loc[data['Location'] == kota]
     df_tgl = df_kota.loc[data['Date'] == tanggal]
     temp = df_tgl['MinTemp']
     return temp
@@ -41,8 +41,8 @@ def getTempDate(kota, tanggal):
 # else:
 #     print(getCuaca(kota))
 
-df_kota = data.loc[data['Location'] == 'Albury'] 
+
+df_kota = data.loc[data['Location'] == 'Albury']
 df_tgl = df_kota.loc[data['Date'] == '6/24/2017']
 print(getTempDate('Albury', '6/24/2017')+5)
-    # getTempDate('Albury', '6/24/2017')
-    
+# getTempDate('Albury', '6/24/2017')
