@@ -410,5 +410,15 @@
         </div>
     </footer>
 </body>
-
+<script>
+        let container = document.querySelector('.cardContainer').children;
+        console.log(container);
+        for (i = 0; i < container.length; i++) {
+            let card = container[i].firstElementChild;
+            console.log(card);
+            container[i].addEventListener("click", function () {
+                card.submit();
+            })
+        }
+    </script>
 </html>

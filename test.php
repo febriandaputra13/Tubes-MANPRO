@@ -62,7 +62,7 @@
     // $output = shell_exec($command);
     // echo "$output";
     // echo "aa";
-    $tgl1 = "2013-01-03";// pendefinisian tanggal awal
+    $tgl1 = "2013-1-3";// pendefinisian tanggal awal
     $tgl2 = date('m/d/Y', strtotime('+1 days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
     echo $tgl2."<br>"; //print tanggal
     $tgl2 = "5/12/2021";
