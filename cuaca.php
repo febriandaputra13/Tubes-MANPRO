@@ -155,11 +155,9 @@
                         $start = $_POST["from"]; $end = $_POST["to"];   //minta tolong dikoreksi ya tktnya salah
                         $tanggal = date_format(date_create($start), 'm/d/Y');
                         $end = date_format(date_create($end), 'm/d/Y');
+                        $end = date('m/d/Y', strtotime('+1 days', strtotime($end)));
                         while($tanggal != $end){                  //looping tabel
                             //ini bwt nampilin atribut bwt tiap tanggal, gtw hrs pake passthru ato shell_exec :D
-                            if(ord($tanggal) == 48){
-                                $tanggal = substr($tanggal, 1);
-                            }
                             $suhu =  shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
                             $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
                             $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));
@@ -182,7 +180,6 @@
                     }else{
                         //klo ini diambil berdasarkan tanggal paling terakhir dari csvnya
                         $tanggal = shell_exec(escapeshellcmd("python data_aus.py $namaCity"));
-                        // $tanggal = passthru("python data_aus.py $namaCity");
                         $suhu = shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
                         $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
                         $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));

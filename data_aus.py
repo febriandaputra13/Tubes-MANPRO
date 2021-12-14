@@ -6,11 +6,11 @@ Created on Fri Dec 10 13:37:22 2021
 """
 import pandas as pd
 import sys
+from datetime import datetime
 
 
 data = pd.read_csv('data/weatherAUS.csv')
- 
-# print(data)
+
 def getTemp(kota):
     df_kota = data.loc[data['Location'] == kota] 
     temp = df_kota.iloc[-1]['MinTemp']
@@ -26,25 +26,25 @@ def getCuaca(kota):
     
 def getTempDate(kota, tanggal):
     df_kota = data.loc[data['Location'] == kota] 
-    df_tgl = df_kota.loc[data['Date'] == tanggal]
+    df_tgl = df_kota.loc[df_kota['Date'] == tanggal]
     temp = df_tgl.iloc[-1]['MinTemp']
     return temp
 
 def getWindSpeedDate(kota, tanggal):
     df_kota = data.loc[data['Location'] == kota] 
-    df_tgl = df_kota.loc[data['Date'] == tanggal]
+    df_tgl = df_kota.loc[df_kota['Date'] == tanggal]
     temp = df_tgl.iloc[-1]['WindSpeed9am']
     return temp
 
 def getHumidityDate(kota, tanggal):
     df_kota = data.loc[data['Location'] == kota] 
-    df_tgl = df_kota.loc[data['Date'] == tanggal]
+    df_tgl = df_kota.loc[df_kota['Date'] == tanggal]
     temp = df_tgl.iloc[-1]['Humidity9am']
     return temp
 
 def getRainfallDate(kota, tanggal):
     df_kota = data.loc[data['Location'] == kota] 
-    df_tgl = df_kota.loc[data['Date'] == tanggal]
+    df_tgl = df_kota.loc[df_kota['Date'] == tanggal]
     temp = df_tgl.iloc[-1]['Rainfall']
     return temp
 
@@ -76,7 +76,8 @@ elif(pjg_param == 2):
     kota = sys.argv[1]
     print(getLastDate(kota))
 
-# print(getTempDate('Albury', '6/24/2017'))
+# tanggal = datetime.strptime('6/16/2017', '%m/%d/%Y')
+# print(getWindSpeedDate('Albury', tanggal))
 # print(getWindSpeedDate('Sydney','6/24/2017'))
 # df_kota = data.loc[data['Location'] == 'Albury'] 
 # df_tgl = df_kota.loc[data['Date'] == '6/24/2017']
