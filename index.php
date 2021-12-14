@@ -111,9 +111,15 @@
                     <h3 class="font"><?php echo($city1) ?></h3>
 
                     <?php
+<<<<<<< Updated upstream
                         // $cuaca = "Hujan";
                         $ket = 'Cuaca';
                         $cuaca = passthru("python data_aus.py $ket $city1");
+=======
+                        $keterangan = "Suhu";
+                        $cuaca = passthru("python data_aus.py $kota $keterangan");
+                        var_dump($cuaca);
+>>>>>>> Stashed changes
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{

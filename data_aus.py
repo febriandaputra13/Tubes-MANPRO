@@ -52,12 +52,16 @@ def getRainfallDate(kota, tanggal):
     temp = df_tgl['Rainfall']
     return temp
 
+<<<<<<< Updated upstream
 def getLastDate(kota):
     df_kota = data.loc[data['Location'] == kota] 
     return df_kota.loc[len(df_kota)-1]['Date']
 
 pjg_param = len(sys.argv)
 
+=======
+pjg_param = len(sys.argv)
+>>>>>>> Stashed changes
 if(pjg_param == 3):
     tanggal = sys.argv[3]
     kota = sys.argv[2]
@@ -69,17 +73,25 @@ if(pjg_param == 3):
     elif(keterangan == 'Humidity'):
         print(getHumidityDate(kota, tanggal))
     else:
+<<<<<<< Updated upstream
         print(getRainfallDate(kota, tanggal))
 elif(pjg_param == 2):
+=======
+        print(getCuaca(kota))
+else:
+>>>>>>> Stashed changes
     kota = sys.argv[2]
     keterangan = sys.argv[1]
     if(keterangan == 'Suhu'):
         print(getTemp(kota))
     else:
         print(getCuaca(kota))
+<<<<<<< Updated upstream
 else:
     kota = sys.argv[1]
     print(getLastDate(kota))
+=======
+>>>>>>> Stashed changes
 
 
 
@@ -87,4 +99,8 @@ else:
 # df_tgl = df_kota.loc[data['Date'] == '6/24/2017']
 # print(getTempDate('Albury', '6/24/2017'))
 #     # getTempDate('Albury', '6/24/2017')
+<<<<<<< Updated upstream
     
+=======
+    
+>>>>>>> Stashed changes
