@@ -16,5 +16,19 @@ import sys
 
 #res=[11,222,69]
 #res=[10,255,3]
-var1=int(sys.argv[1])
-print(var1)
+# var1=int(sys.argv[1])
+
+# var2=int(sys.argv[2])
+# var3=int(sys.argv[3])
+# res=[var1,var2,var3]
+# print(res)
+
+
+
+import pandas as pd
+import sys
+
+
+data = pd.read_csv('data/weatherAUS.csv')
+
+
