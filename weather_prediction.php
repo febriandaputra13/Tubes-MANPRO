@@ -100,6 +100,24 @@
             $namaCity=$city;
         }
     }
+
+    $city1=$arr[rand(0,48)];
+
+   $city2=$arr[rand(0,48)];
+   //while ini buat supaya city 2 ga bakal sama kaya city 1
+   while($city2==$city1){
+    $city2=$arr[rand(0,48)];
+   }
+
+   $city3=$arr[rand(0,48)];
+   while($city3==$city1&&$city3==$city2){
+    $city3=$arr[rand(0,48)];
+   }
+
+   $city4=$arr[rand(0,48)];
+   while($city4==$city3&&$city4==$city2&&$city4==$city1){
+    $city4=$arr[rand(0,48)];
+   }
     
 ?>
     <nav class="navbar">
@@ -117,51 +135,143 @@
     <div id="content" class="w3-center">
         <h1>WEATHER TODAY</h1>
         <div class="kotakluar w3-center">
-            <div class="" style="display:flex;">
+            <div class="cardContainer" style="display:flex;">
                 <!-- COL 1 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerahberawan.png" style="width: 50%;" alt="">
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city1) ?></h3>
+
+                    <?php
+                        // $cuaca = "Hujan";
+                        $ket = 'Cuaca';
+                        $kota = str_replace(" ","",$city1);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
+                        $kota = str_replace(" ","",$city1);
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+                    
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php 
+                        $ket = 'Suhu';
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
+                        echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Cloudy</h3>
+
+                    <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city1) ?>" name="city" style="display:'none'">
+                    </form>
+
                 </div>
                 <!-- COL 2 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city2) ?></h3>
+                    
+                    <?php
+                        $ket = 'Cuaca';
+                        $kota = str_replace(" ","",$city2);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">35 °C</span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
+                        echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+
+                   <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city2) ?>" name="city" style="display:'none'">
+                    </form>
 
                 </div>
                 <!-- COL 3 -->
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/hujanbadai.png" style="width: 50%;" alt="">
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city3) ?></h3>
+                   
+                    <?php
+                        $ket = 'Cuaca';
+                        $kota = str_replace(" ","",$city3);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">20 °C</span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
+                        echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Storm</h3>
+
+                     <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city3) ?>" name="city" style="display:'none'">
+                    </form>
 
                 </div>
-                <div class="w3-card-2 w3-center kotak" onclick="location.href='www.google.com';"
+                <!-- COL 4 -->
+                <div class="w3-card-2 w3-center kotak" 
                     style="width: 17%; cursor: pointer;">
-                    <h3 class="font">Sydney</h3>
-                    <img src="images/cerah.png" style="width: 50%;" alt="">
+
+                    <form action="cuaca.php" method="get">
+                    <h3 class="font"><?php echo($city4) ?></h3>
+                   
+                    <?php
+                        $ket = 'Cuaca';
+                        $kota = str_replace(" ","",$city4);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
+                        if($cuaca == "Cerah"){
+                            echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
+                        }else{
+                            echo "<img src='images/hujan.png' style='width: 50%;' alt=''>";
+                        }
+                    ?>
+
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
-                        <span class="font">29 °C</span>
+                        <span class="font"><?php $ket = 'Suhu';
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
+                        echo "$suhu";?></span>
                     </div>
-                    <h3 class="w3-center font">Sunny</h3>
+
+                      <h3 class="w3-center font"><?php echo "$cuaca";?></h3>
+                    <input type="hidden" value="<?php echo($city4) ?>" name="city" style="display:'none'">
+                    </form>
+
                 </div>
             </div>
         </div>
