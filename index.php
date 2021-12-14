@@ -111,15 +111,13 @@
                     <h3 class="font"><?php echo($city1) ?></h3>
 
                     <?php
-<<<<<<< Updated upstream
                         // $cuaca = "Hujan";
                         $ket = 'Cuaca';
-                        $cuaca = passthru("python data_aus.py $ket $city1");
-=======
-                        $keterangan = "Suhu";
-                        $cuaca = passthru("python data_aus.py $kota $keterangan");
-                        var_dump($cuaca);
->>>>>>> Stashed changes
+                        $kota = str_replace(" ","",$city1);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
+                        $kota = str_replace(" ","",$city1);
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -132,7 +130,8 @@
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php 
                         $ket = 'Suhu';
-                        $suhu = passthru("python data_aus.py $ket $city1");
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
                         echo "$suhu";?></span>
                     </div>
 
@@ -150,7 +149,10 @@
                     
                     <?php
                         $ket = 'Cuaca';
-                        $cuaca = passthru("python data_aus.py $ket $city2");
+                        $kota = str_replace(" ","",$city2);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -161,7 +163,8 @@
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $ket = 'Suhu';
-                        $suhu = passthru("python data_aus.py $ket $city2");
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
                         echo "$suhu";?></span>
                     </div>
 
@@ -179,7 +182,10 @@
                    
                     <?php
                         $ket = 'Cuaca';
-                        $cuaca = passthru("python data_aus.py $ket $city3");
+                        $kota = str_replace(" ","",$city3);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -190,7 +196,8 @@
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $ket = 'Suhu';
-                        $suhu = passthru("python data_aus.py $ket $city3");
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
                         echo "$suhu";?></span>
                     </div>
 
@@ -208,7 +215,10 @@
                    
                     <?php
                         $ket = 'Cuaca';
-                        $cuaca = passthru("python data_aus.py $ket $city4");
+                        $kota = str_replace(" ","",$city4);
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $cuaca = shell_exec($command);
+                        $cuaca = substr($cuaca, 0, 5);
                         if($cuaca == "Cerah"){
                             echo "<img src='images/cerah.png' style='width: 50%;' alt=''>";
                         }else{
@@ -219,7 +229,8 @@
                     <div class="suhu w3-center">
                         <img src="images/temperature.png" style="width: 7%;" alt="">
                         <span class="font"><?php $ket = 'Suhu';
-                        $suhu = passthru("python data_aus.py $ket $city4");
+                        $command = escapeshellcmd("python data_aus.py $ket $kota");
+                        $suhu = shell_exec($command);
                         echo "$suhu";?></span>
                     </div>
 

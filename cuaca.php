@@ -96,7 +96,7 @@
                         </button> 
                 </li>
             </form>
-            <li class="linkhome"><a href="">HOMEPAGE</a></li>
+            <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
     </nav>
     
@@ -148,20 +148,22 @@
                   <th>Rainfall</th>
                 </tr>
 
-                <!-- <?php
+                <?php
                     $ket1 = 'Suhu'; $ket2 = 'WindSpeed'; $ket3 = 'Humidity'; $ket4 = 'Rainfall';
                     if(isset($_POST["from"]) && isset($_POST["to"])){
                         // ini klo udah masukkin rentang tanggalnya
                         $start = $_POST["from"]; $end = $_POST["to"];   //minta tolong dikoreksi ya tktnya salah
-                        $diff = date_diff($end,$start)->format("%a") ;  //nyari selisih rentang tanggal
-                        for($i = 0; $i < $diff; $i++){                  //looping tabel
-                            date_add($start,date_interval_create_from_date_string("1 days"));       //tanggalnya nambah 1 hari (mulai dari start) tiap kali looping
-                            $tanggal = date_format($start,"m/d/Y");                                 //kan kalo di csv format nya bulan/tgl/thn jadi harus di konv (defaultnya thn-bln-tgl)
+                        $tanggal = date_format(date_create($start), 'm/d/Y');
+                        $end = date_format(date_create($end), 'm/d/Y');
+                        while($tanggal != $end){                  //looping tabel
                             //ini bwt nampilin atribut bwt tiap tanggal, gtw hrs pake passthru ato shell_exec :D
-                            $suhu = passthru("python data_aus.py $ket1 $namaCity $tanggal");
-                            $wind = passthru("python data_aus.py $ket2 $namaCity $tanggal");
-                            $humid = passthru("python data_aus.py $ket3 $namaCity $tanggal");
-                            $rainfall = $suhu = passthru("python data_aus.py $ket4 $namaCity $tanggal");
+                            if(ord($tanggal) == 48){
+                                $tanggal = substr($tanggal, 1);
+                            }
+                            $suhu =  shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
+                            $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
+                            $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));
+                            $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $namaCity $tanggal"));
                             echo "
                             <tr>
                                 <td>$tanggal</td>
@@ -171,15 +173,20 @@
                                 <td>$rainfall mm</td>
                             </tr>
                             ";
+                            $tanggal = date('m/d/Y', strtotime('+1 days', strtotime($tanggal)));
+                            // $temp = date_add(date_create($temp),date_interval_create_from_date_string("1 days"));       //tanggalnya nambah 1 hari (mulai dari start) tiap kali looping
+                            // $tanggal = date_format(date_create($temp),"m/d/Y");                                 //kan kalo di csv format nya bulan/tgl/thn jadi harus di konv (defaultnya thn-bln-tgl)
+                            
                         }
 
                     }else{
                         //klo ini diambil berdasarkan tanggal paling terakhir dari csvnya
-                        $tanggal = passthru("python data_aus.py $namaCity");
-                        $suhu = passthru("python data_aus.py $ket1 $namaCity $tanggal");
-                        $wind = passthru("python data_aus.py $ket2 $namaCity $tanggal");
-                        $humid = passthru("python data_aus.py $ket3 $namaCity $tanggal");
-                        $rainfall = $suhu = passthru("python data_aus.py $ket4 $namaCity $tanggal");
+                        $tanggal = shell_exec(escapeshellcmd("python data_aus.py $namaCity"));
+                        // $tanggal = passthru("python data_aus.py $namaCity");
+                        $suhu = shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
+                        $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
+                        $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));
+                        $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $namaCity $tanggal"));
                         echo "
                         <tr>
                             <td>$tanggal</td>
@@ -190,8 +197,8 @@
                         </tr>
                         ";
                 }
-                ?> -->
-                <tr>
+                ?>
+                <!-- <tr>
                   <td>23 Nov 2021</td>
                   <td>20 °C</td>
                   <td>23 km/h</td>
@@ -211,7 +218,7 @@
                   <td>25 km/h</td>
                   <td>90%</td>
                   <td>1.7 mm</td>
-                </tr>
+                </tr> -->
               </table>
         </div><br>
 
