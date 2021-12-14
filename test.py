@@ -16,8 +16,19 @@ import sys
 
 #res=[11,222,69]
 #res=[10,255,3]
-from datetime import datetime
+# var1=int(sys.argv[1])
 
-datetime_object = datetime.strptime('2008-12-02 00:00:00', '%m/%d/%Y').date()
-datetime_object2 = datetime.strptime('2/2/2000', '%m/%d/%Y').date()
-print(datetime_object)
+# var2=int(sys.argv[2])
+# var3=int(sys.argv[3])
+# res=[var1,var2,var3]
+# print(res)
+
+
+
+import pandas as pd
+import sys
+
+
+data = pd.read_csv('data/weatherAUS.csv')
+
+
