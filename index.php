@@ -23,9 +23,15 @@
 =======
                 <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
                         placeholder="Enter a Country, State, or City"> 
+<<<<<<< Updated upstream
                       
                             <i  class="fa fa-search srchicon"></i>
                          
+=======
+                        
+                            <i  class="fa fa-search srchicon"></i>
+                        
+>>>>>>> Stashed changes
                 </li>
 >>>>>>> Stashed changes
             </form>
@@ -166,7 +172,7 @@
 
                     </table>
 
-                    <button class="w3-button w3-white w3-round-xxlarge btnforecast" type="submit">submit</button>
+                    <button class="w3-button w3-white w3-round-xxlarge btnforecast" type="submit">Submit</button>
                 </form>
             </div>
         </div>
