@@ -59,12 +59,18 @@
     // $output = shell_exec($command);
     // echo "$output";
     // echo "aa";
-    $tgl1 = "2013-1-3";// pendefinisian tanggal awal
-    $tgl2 = date('m/d/Y', strtotime('+1 days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
-    echo $tgl2."<br>"; //print tanggal
-    $tgl2 = "5/12/2021";
-    $tgl2 = date('m/d/Y', strtotime('+1 days', strtotime($tgl2))); //operasi penjumlahan tanggal sebanyak 6 hari
-    echo substr($tgl2,1); //print tanggal
+    // $tgl1 = "2013-1-3";// pendefinisian tanggal awal
+    // $tgl2 = date('m/d/Y', strtotime('+1 days', strtotime($tgl1))); //operasi penjumlahan tanggal sebanyak 6 hari
+    // echo $tgl2."<br>"; //print tanggal
+    // $tgl2 = "5/12/2021";
+    // $tgl2 = date('m/d/Y', strtotime('+1 days', strtotime($tgl2))); //operasi penjumlahan tanggal sebanyak 6 hari
+    // echo substr($tgl2,1); //print tanggal
+
+    passthru("python grafik.py");
+    echo '<img src="images/Temperatur.png" style="width: 80%; margin: 1.1rem" alt="">
+    <img src="images/Windspeed.png" style="width: 80%; margin: 1.1rem" alt="">
+    <img src="images/Humidity.png" style="width: 80%; margin: 1.1rem" alt="">
+    <img src="images/Rainfall.png" style="width: 80%; margin: 1.1rem" alt="">';
     
 ?>
 

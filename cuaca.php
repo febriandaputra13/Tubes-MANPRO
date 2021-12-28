@@ -150,6 +150,7 @@
 
                 <?php
                     $ket1 = 'Suhu'; $ket2 = 'WindSpeed'; $ket3 = 'Humidity'; $ket4 = 'Rainfall';
+                    $kota = str_replace(" ","",$namaCity);
                     if(isset($_POST["from"]) && isset($_POST["to"])){
                         // ini klo udah masukkin rentang tanggalnya
                         $start = $_POST["from"]; $end = $_POST["to"];   //minta tolong dikoreksi ya tktnya salah
@@ -158,10 +159,10 @@
                         $end = date('m/d/Y', strtotime('+1 days', strtotime($end)));
                         while($tanggal != $end){                  //looping tabel
                             //ini bwt nampilin atribut bwt tiap tanggal, gtw hrs pake passthru ato shell_exec :D
-                            $suhu =  shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
-                            $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
-                            $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));
-                            $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $namaCity $tanggal"));
+                            $suhu =  shell_exec(escapeshellcmd("python data_aus.py $ket1 $kota $tanggal"));
+                            $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $kota $tanggal"));
+                            $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $kota $tanggal"));
+                            $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $kota $tanggal"));
                             echo "
                             <tr>
                                 <td>$tanggal</td>
@@ -179,11 +180,11 @@
 
                     }else{
                         //klo ini diambil berdasarkan tanggal paling terakhir dari csvnya
-                        $tanggal = shell_exec(escapeshellcmd("python data_aus.py $namaCity"));
-                        $suhu = shell_exec(escapeshellcmd("python data_aus.py $ket1 $namaCity $tanggal"));
-                        $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $namaCity $tanggal"));
-                        $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $namaCity $tanggal"));
-                        $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $namaCity $tanggal"));
+                        $tanggal = shell_exec(escapeshellcmd("python data_aus.py $kota"));
+                        $suhu = shell_exec(escapeshellcmd("python data_aus.py $ket1 $kota $tanggal"));
+                        $wind = shell_exec(escapeshellcmd("python data_aus.py $ket2 $kota $tanggal"));
+                        $humid = shell_exec(escapeshellcmd("python data_aus.py $ket3 $kota $tanggal"));
+                        $rainfall = shell_exec(escapeshellcmd("python data_aus.py $ket4 $kota $tanggal"));
                         echo "
                         <tr>
                             <td>$tanggal</td>
