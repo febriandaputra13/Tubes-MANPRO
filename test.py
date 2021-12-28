@@ -34,5 +34,15 @@ y = x*x*x+2*x-2
 # gunakan fungsi plot untuk menggambar fungsi y
 plt.plot(x,y,'r')
 
-plt.savefig('images/gambar.png')
+tanggal1 = datetime.strptime(sys.argv[1], '%d/%m/%Y').date()
+tanggal2 = datetime.strptime(sys.argv[2], '%d/%m/%Y').date()
+tgl = []
+while(tanggal1 != tanggal2):
+    tanggal1 += timedelta(1)
+    tgl.append(tanggal1.strftime("%m/%d/%Y"))
+    # print(tanggal1)
+
+for i in range(len(tgl)):
+    print(tgl[i])
+# plt.savefig('images/gambar.png')
 
