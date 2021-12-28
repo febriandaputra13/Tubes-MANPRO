@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/style.css">
     <title>Weather Report</title>
 </head>
@@ -84,7 +86,7 @@
     
 ?>
 
-    <nav class="navbar">
+    <nav class="navbar" style="width:100%;">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
@@ -114,9 +116,9 @@
         <h3 style="color: black; font-weight: bold;">Weather Info</h3>
 
         <div class="" style="display:flex; ">
-            <div class="" style="margin-left:1rem;">
+            <div class="" style="margin-left:1rem; width:50%">
                 <h2 style="color: black; font-weight: bold;">Graph Info</h2>
-                <img src="images/grafik.jpg" style="width: 80%; margin: 1.1rem" alt="">
+                <!-- <img src="images/grafik.jpg" style="width: 80%; margin: 1.1rem" alt=""> -->
                 <?php
                     $ket1 = 'Suhu'; $ket2 = 'WindSpeed'; $ket3 = 'Humidity'; $ket4 = 'Rainfall';
                     $kota = str_replace(" ","",$namaCity);
@@ -130,13 +132,133 @@
                         $tanggal = shell_exec(escapeshellcmd("python data_aus.py $kota"));
                         passthru("python grafik.py $kota $tanggal");
                     }
-                    echo '<img src="images/Temperatur.png" style="width: 80%; margin: 1.1rem" alt="">
-                    <img src="images/Windspeed.png" style="width: 80%; margin: 1.1rem" alt="">
-                    <img src="images/Humidity.png" style="width: 80%; margin: 1.1rem" alt="">
-                    <img src="images/Rainfall.png" style="width: 80%; margin: 1.1rem" alt="">';
                 ?>
+                <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button style="background-color: #FCD447;" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Temperature
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="background-color:#E3F4FE">
+                    <div class="accordion-body">
+                        <?php
+                            echo '<img src="images/Temperatur.png" style="width: 80%; margin: 1.1rem" alt="">';
+                        ?>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                    <button style="background-color: #FCD447;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Windspeed
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample" style="background-color:#E3F4FE">
+                    <div class="accordion-body">
+                        <?php
+                        echo '<img src="images/Windspeed.png" style="width: 80%; margin: 1.1rem" alt="">';
+                        ?>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                    <button style="background-color: #FCD447;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Humidity
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample" style="background-color:#E3F4FE">
+                    <div class="accordion-body">
+                    <?php
+                        echo '<img src="images/Humidity.png" style="width: 80%; margin: 1.1rem" alt="">';
+                    ?>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                    <button style="background-color: #FCD447;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Rainfall
+                    </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample" style="background-color:#E3F4FE">
+                    <div class="accordion-body">
+                        <?php
+                        echo '<img src="images/Rainfall.png" style="width: 80%; margin: 1.1rem" alt="">';
+                        ?>
+                    </div>
+                    </div>
+                </div>
+                </div>
+               
+                <!-- <div class="accordion accordion-flush mx-auto" id="accordionPanelsStayOpenExample" style="width: 100%;">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" style="background-color: #FCD447;">
+                            Temperature
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="background-color: #f4ebe1;">
+                            <div class="ms-5">
+                                <?php
+                                    //echo '<img src="images/Temperatur.png" style="width: 80%; margin: 1.1rem" alt="">';
+                                ?>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" style="background-color: #FCD447;">
+                            Windspeed
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="background-color: #f4ebe1;">
+                            <div class="ms-5">
+                            <?php
+                                   //echo '<img src="images/Windspeed.png" style="width: 80%; margin: 1.1rem" alt="">';
+                                ?>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" style="background-color: #FCD447;">
+                            Humidity
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="background-color: #f4ebe1;">
+                            <div class="ms-5">
+                            <?php
+                                    //echo '<img src="images/Humidity.png" style="width: 80%; margin: 1.1rem" alt="">';
+                                ?>
+                            </div>
+                        </div>
+                        </div>
+                    </div> <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                        <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour" style="background-color: #FCD447;">
+                        Rainfall
+                        </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body" style="background-color: #f4ebe1;">
+                            <div class="ms-5">
+                            <?php
+                                    //echo '<img src="images/Rainfall.png" style="width: 80%; margin: 1.1rem" alt="">';
+                                ?>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div> -->
             </div>
-
+                
             <div class="" style="margin-left:10rem;">
                 <h2 style="color: black; font-weight: bold;">Range of Date</h2>
                 <form action="cuaca.php" method="POST">
@@ -238,7 +360,8 @@
 
         
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <footer>
         <div id="footerKiri">
             <div id="logoFooter">
