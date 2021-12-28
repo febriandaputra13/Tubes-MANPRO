@@ -41,10 +41,10 @@ for x in range(len(tanggal)):
 kiri = range(0, len(tanggal))
 x2 = tanggal
 y2 = cols['temp3pm']
-plt.plot(x2, y2, label = "Temp at 3PM")
+plt.plot(x2, y2, label = "Temp at 3PM", marker='8')
 x1 = tanggal
 y1 = cols['temp9am']
-plt.plot(x1, y1, label = "Temp at 9AM")
+plt.plot(x1, y1, label = "Temp at 9AM", marker='8')
  
 plt.xlabel('Date')
 plt.ylabel('Degree Celcius')
@@ -59,11 +59,11 @@ plt.figure().clear()
 kiri = range(0, len(tanggal))
 x2 = tanggal
 y2 = cols['windspeed3pm']
-plt.plot(x2, y2, label = "Windspeed at 3PM")
+plt.plot(x2, y2, label = "Windspeed at 3PM", marker='8')
 x1 = tanggal
 y1 = cols['windspeed9am']
 
-plt.plot(x1, y1, label = "Windspeed at 9AM")
+plt.plot(x1, y1, label = "Windspeed at 9AM", marker='8')
  
 plt.xlabel('Date')
 plt.ylabel('Windspeed KM/H')
@@ -78,10 +78,10 @@ plt.figure().clear()
 kiri = range(0, len(tanggal))
 x2 = tanggal
 y2 = cols['humidity3pm']
-plt.plot(x2, y2, label = "Humidity at 3PM")
+plt.plot(x2, y2, label = "Humidity at 3PM", marker='8')
 x1 = tanggal
 y1 = cols['humidity9am']
-plt.plot(x1, y1, label = "Humidity at 9AM")
+plt.plot(x1, y1, label = "Humidity at 9AM", marker='8')
  
 
  
@@ -98,7 +98,7 @@ plt.figure().clear()
 kiri = range(0, len(tanggal))
 x1 = tanggal
 y1 = cols['rainfall']
-plt.plot(x1, y1, label = "Rainfall")
+plt.plot(x1, y1, label = "Rainfall", marker='8')
  
 
  
