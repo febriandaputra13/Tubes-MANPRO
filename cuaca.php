@@ -119,6 +119,24 @@
             <div class="" style="margin-left:1rem;">
                 <h2 style="color: black; font-weight: bold;">Graph Info</h2>
                 <img src="images/grafik.jpg" style="width: 80%; margin: 1.1rem" alt="">
+                <?php
+                    $ket1 = 'Suhu'; $ket2 = 'WindSpeed'; $ket3 = 'Humidity'; $ket4 = 'Rainfall';
+                    $kota = str_replace(" ","",$namaCity);
+                    if(isset($_POST["from"]) && isset($_POST["to"])){
+                        // ini klo udah masukkin rentang tanggalnya
+                        $start = $_POST["from"]; $end = $_POST["to"];   //minta tolong dikoreksi ya tktnya salah
+                        // var_dump($start);
+                        passthru("python grafik.py $kota $start $end");
+                    }else{
+                        //klo ini diambil berdasarkan tanggal paling terakhir dari csvnya
+                        $tanggal = shell_exec(escapeshellcmd("python data_aus.py $kota"));
+                        passthru("python grafik.py $kota $tanggal");
+                    }
+                    echo '<img src="images/Temperatur.png" style="width: 80%; margin: 1.1rem" alt="">
+                    <img src="images/Windspeed.png" style="width: 80%; margin: 1.1rem" alt="">
+                    <img src="images/Humidity.png" style="width: 80%; margin: 1.1rem" alt="">
+                    <img src="images/Rainfall.png" style="width: 80%; margin: 1.1rem" alt="">';
+                ?>
             </div>
 
             <div class="" style="margin-left:10rem;">

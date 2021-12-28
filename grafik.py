@@ -1,22 +1,34 @@
 # -*- coding: utf-8 -*-
-
+import sys
 import pandas as pd
 import numpy as np
 import pickle
 import matplotlib.pyplot as plt
+from datetime import datetime, time, timedelta
 
 df_weather = pd.read_csv("data/weatherAUS.csv")
+pjg_param = len(sys.argv)
+tanggal = []
+if(pjg_param == 3):
+  tanggal1 = sys.argv[2]
+  tanggal.append(tanggal1)
+else:
+  tanggal1 = datetime.strptime(sys.argv[2], '%Y-%m-%d').date()
+  tanggal2 = datetime.strptime(sys.argv[3], '%Y-%m-%d').date()
+  tanggal.append(tanggal1.strftime("%m/%d/%Y"))
+  while(tanggal1 != tanggal2):
+      tanggal1 += timedelta(1)
+      tanggal.append(tanggal1.strftime("%m/%d/%Y"))
 
+print(tanggal)
+print(sys.argv[1])
+# tanggal = ["12/01/2008","12/02/2008","12/03/2008"]
 
-
-#coba coba
-tanggal = ["12/01/2008","12/02/2008","12/03/2008"]
-print("haha")
 cols = {'temp9am':[], 'temp3pm':[], 'windspeed9am':[], 'windspeed3pm':[], 'humidity9am':[], 'humidity3pm':[], 'rainfall':[]}
 
 for x in range(len(tanggal)):
   for i in range(len(df_weather['Date'])):
-    if df_weather['Date'][i] == tanggal[x]:
+    if (df_weather['Date'][i] == tanggal[x] and df_weather['Location'][i] == sys.argv[1]):
       cols['temp9am'].append(df_weather['Temp9am'][i])
       cols['temp3pm'].append(df_weather['Temp3pm'][i])
       cols['windspeed9am'].append(df_weather['WindSpeed9am'][i])
@@ -50,6 +62,7 @@ y2 = cols['windspeed3pm']
 plt.plot(x2, y2, label = "Windspeed at 3PM")
 x1 = tanggal
 y1 = cols['windspeed9am']
+
 plt.plot(x1, y1, label = "Windspeed at 9AM")
  
 plt.xlabel('Date')
