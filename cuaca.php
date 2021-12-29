@@ -86,14 +86,14 @@
     
 ?>
 
-    <nav class="navbar" style="width:100%;">
+    <nav class="navbar1" style="width:100%;">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
                 <label for="city"></label>
                 <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
                         placeholder="Enter a Country, State, or City"> 
-                            <i style="margin-left:1rem;" class="fa fa-search srchicon"></i> 
+                            <i style="margin-left:0.3rem;" class="fa fa-search srchicon"></i> 
                 </li>
             </form>
             <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
