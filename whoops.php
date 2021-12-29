@@ -17,7 +17,7 @@
                 <label for="city"></label>
                 <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
                         placeholder="Enter a Country, State, or City"> 
-                            <i style="margin-left:0.5rem;" class="fa fa-search srchicon"></i>
+                            <i style="margin-left:0.3rem;" class="fa fa-search srchicon"></i>
                       
                 </li>
             </form>
