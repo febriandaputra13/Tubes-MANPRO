@@ -19,9 +19,7 @@ else:
   while(tanggal1 != tanggal2):
       tanggal1 += timedelta(1)
       tanggal.append(tanggal1.strftime("%m/%d/%Y"))
-
-print(tanggal)
-print(sys.argv[1])
+      
 # tanggal = ["12/01/2008","12/02/2008","12/03/2008"]
 
 cols = {'temp9am':[], 'temp3pm':[], 'windspeed9am':[], 'windspeed3pm':[], 'humidity9am':[], 'humidity3pm':[], 'rainfall':[]}
