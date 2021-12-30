@@ -120,13 +120,13 @@
    }
     
 ?>
-    <nav class="navbar">
+    <nav class="navbar1">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
                 <label for="city"></label>
                 <li class=" w3-display-topmiddle srchbar"> <input type="text" name="city" id="city"
-                        placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i></li>
+                        placeholder="Enter a Country, State, or City"> <i style="margin-left:0.3rem;" class="fa fa-search srchicon"></i></li>
             </form>
             <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
@@ -338,12 +338,11 @@
                     <h2>Today</h2>
                     <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
                         <h3 class="font">Sydney</h3>
-                        <img src="images/hujanbadai.png" style="width: 50%;" alt="">
+                        <!-- <img src="images/hujanbadai.png" style="width: 50%;" alt=""> -->
                         <div class="suhu w3-center">
-                            <img src="images/temperature.png" style="width: 7%;" alt="">
-                            <span class="font">20 °C</span>
+                            <!-- <img src="images/temperature.png" style="width: 7%;" alt=""> -->
                         </div>
-                        <h3 class="w3-center font"> 
+                        <h4 class="w3-center font"> 
                             <?php 
                                 if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
                                     $rainfall=$_GET["rainfall"];
@@ -354,7 +353,7 @@
                                     $output=passthru("python predict_today.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
                                 } 
                             ?> 
-                        </h3>
+                        </h4>
                     </div>
                 </div>
                     
@@ -362,12 +361,11 @@
                     <h2>Tommorrow</h2>
                     <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
                         <h3 class="font">Sydney</h3>
-                        <img src="images/hujanbadai.png" style="width: 50%;" alt="">
+                        <!-- <img src="images/hujanbadai.png" style="width: 50%;" alt=""> -->
                         <div class="suhu w3-center">
-                            <img src="images/temperature.png" style="width: 7%;" alt="">
-                            <span class="font">20 °C</span>
+                            <!-- <img src="images/temperature.png" style="width: 7%;" alt=""> -->
                         </div>
-                        <h3 class="w3-center font">
+                        <h4 class="w3-center font">
                             <?php 
                                     if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
                                         $rainfall=$_GET["rainfall"];
@@ -379,7 +377,7 @@
                                     } 
                                 ?> 
 
-                        </h3>
+                        </h4>
                     </div>
 
                 </div>

@@ -30,7 +30,7 @@ background-color: white;
 .kotakluar {
     padding: 30px;
     background-color: white;
-    margin-left: 25rem;
+    margin-left: 18rem;
 }
 
 .font {
@@ -114,7 +114,7 @@ footer {
 
 
 /* aldo */
-  .navbar ul {
+  .navbar1 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -122,20 +122,20 @@ footer {
     background-color: #E3F4FE;
 }
 
-.navbar ul .linkhome {
+.navbar1 ul .linkhome {
     float: right;
     margin-top: -4.1rem;
     margin-right: 2rem;
 }
 
-.navbar .linkhome a {
+.navbar1 .linkhome a {
 
     text-align: center;
 
     text-decoration: none;
 }
 
-.navbar .linkhome a:hover {
+.navbar1 .linkhome a:hover {
 
     text-align: center;
     color: black;
@@ -146,18 +146,18 @@ footer {
     text-decoration: none;
 }
 
-.navbar ul .srchbar {
+.navbar1 ul .srchbar {
     margin-top: 2rem;
 }
 
-.navbar ul .srchbar input {
+.navbar1 ul .srchbar input {
     border-radius: 25px;
     width: 18rem;
     font-size: small;
     padding-left: 0.5rem;
 }
 
-.navbar img {
+.navbar1 img {
     width: 5rem;
     height: 5rem;
     padding: 0;
