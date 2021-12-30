@@ -338,20 +338,26 @@
                     <h2>Today</h2>
                     <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
                         <h3 class="font">Sydney</h3>
-                        <!-- <img src="images/hujanbadai.png" style="width: 50%;" alt=""> -->
-                        <div class="suhu w3-center">
-                            <!-- <img src="images/temperature.png" style="width: 7%;" alt=""> -->
-                        </div>
-                        <h4 class="w3-center font"> 
-                            <?php 
+                        <?php 
                                 if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
                                     $rainfall=$_GET["rainfall"];
                                     $sunshine=$_GET["sunshine"];
                                     $humidity9am=$_GET["humidity9am"];
                                     $humidity3pm=$_GET["humidity3pm"];
                                     $cloud3pm=$_GET["cloud3pm"];
-                                    $output=passthru("python predict_today.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
+                                    $output=shell_exec(escapeshellcmd("python predict_today.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm"));
+                                    if(preg_match("/Not Raining/i", $output) == 1){
+                                        echo '<img src="images/cerahberawan.png" style="width: 50%;" alt="">';
+                                    }else{
+                                        echo '<img src="images/hujan.png" style="width: 50%;" alt="">';
+                                    }
                                 } 
+                            ?> 
+                        <div class="suhu w3-center">
+                        </div>
+                        <h4 class="w3-center font"> 
+                            <?php 
+                                echo $output;
                             ?> 
                         </h4>
                     </div>
@@ -361,11 +367,6 @@
                     <h2>Tommorrow</h2>
                     <div class="w3-card-2 w3-center kotak " onclick="location.href='www.google.com';"style="width: 100%;  cursor: pointer;">
                         <h3 class="font">Sydney</h3>
-                        <!-- <img src="images/hujanbadai.png" style="width: 50%;" alt=""> -->
-                        <div class="suhu w3-center">
-                            <!-- <img src="images/temperature.png" style="width: 7%;" alt=""> -->
-                        </div>
-                        <h4 class="w3-center font">
                             <?php 
                                     if(isset($_GET["rainfall"])&&isset($_GET["sunshine"])&&isset($_GET["humidity9am"])&&isset($_GET["humidity3pm"])&&isset($_GET["cloud3pm"])){
                                         $rainfall=$_GET["rainfall"];
@@ -373,8 +374,19 @@
                                         $humidity9am=$_GET["humidity9am"];
                                         $humidity3pm=$_GET["humidity3pm"];
                                         $cloud3pm=$_GET["cloud3pm"];
-                                        $a=passthru("python predict_tommorrow.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm");
+                                        $output=shell_exec(escapeshellcmd("python predict_tommorrow.py $rainfall $sunshine $humidity9am $humidity3pm $cloud3pm"));
+                                        if(preg_match("/Not Raining/i", $output) == 1){
+                                            echo '<img src="images/cerahberawan.png" style="width: 50%;" alt="">';
+                                        }else{
+                                            echo '<img src="images/hujan.png" style="width: 50%;" alt="">';
+                                        }
                                     } 
+                                ?> 
+                        <div class="suhu w3-center">
+                        </div>
+                        <h4 class="w3-center font">
+                            <?php 
+                                    echo $output;
                                 ?> 
 
                         </h4>
