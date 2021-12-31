@@ -99,12 +99,13 @@ test_new_data_buat_Today = {'Rainfall':[rainfall], 'Humidity9am':[humidity9am], 
 df_test_buat_Today = pd.DataFrame(test_new_data_buat_Today)
 
 y_pred_new_KNN_Today = loaded_model_KNN_Today.predict(df_test_buat_Today)
-if(y_pred_new_KNN_Today[0]==0):
-  print("Not Raining")
-else:
-  print("Raining")
-# print(y_pred_new_KNN_Today)
+hasilAkurasi = round(list_hasilToday[bestKToday] * 100, 2)
 
+if(y_pred_new_KNN_Today[0]==0):
+  print(hasilAkurasi,"% Not Raining")
+else:
+  print(hasilAkurasi,"% Raining")
+# print(y_pred_new_KNN_Today)
 
 
 

@@ -10,21 +10,23 @@
 <body>
     
 
-    <nav class="navbar">
+    <nav class="navbar1">
         <ul>
-
             <li><img src="images/logo.png" alt=""></li>
-
-            <form>
-                <li class=" w3-display-topmiddle srchbar"> <input type="text"
-                        placeholder="Enter a Country, State, or City"> <i class="fa fa-search srchicon"></i> </li>
+            <form action="cuaca.php" method="get">
+                <label for="city"></label>
+                <li class=" w3-display-topmiddle srchbar" > <input type="text" name="city" id="city"
+                        placeholder="Enter a Country, State, or City"> 
+                            <i style="margin-left:0.3rem;" class="fa fa-search srchicon"></i>
+                      
+                </li>
             </form>
             <li class="linkhome"><a href="index.php">HOMEPAGE</a></li>
         </ul>
     </nav>
     
 
-    <div id="content" class="w3-center">
+    <div id="content" class="w3-center" style="height: 50%;">
         <h1>
             City Not Found
         </h1>

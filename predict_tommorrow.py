@@ -101,8 +101,10 @@ df_test_tomorrow = pd.DataFrame(test_new_data_tomorrow)
 
 y_pred_new_KNN_tomorrow = loaded_model_KNN_tomorrow.predict(df_test_tomorrow)
 
+hasilAkurasi = round(list_hasil_tomorrow[bestK_tomorrow] * 100, 2)
+
 if(y_pred_new_KNN_tomorrow==0):
-    print("Not Raining")
+    print(hasilAkurasi, "% Not Raining")
 else:
-    print("Raining")
+    print(hasilAkurasi,"% Raining")
 #print(y_pred_new_KNN_tomorrow)
