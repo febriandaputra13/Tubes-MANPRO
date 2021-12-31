@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 data = pd.read_csv('data/weatherAUS.csv')
-
+data = data.fillna(data.median())
 def getTemp(kota):
     df_kota = data.loc[data['Location'] == kota] 
     temp = df_kota.iloc[-1]['MinTemp']
