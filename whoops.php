@@ -10,7 +10,7 @@
 <body>
     
 
-    <nav class="navbar">
+    <nav class="navbar1">
         <ul>
             <li><img src="images/logo.png" alt=""></li>
             <form action="cuaca.php" method="get">
@@ -26,7 +26,7 @@
     </nav>
     
 
-    <div id="content" class="w3-center">
+    <div id="content" class="w3-center" style="height: 50%;">
         <h1>
             City Not Found
         </h1>
