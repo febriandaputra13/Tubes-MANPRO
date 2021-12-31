@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 from datetime import datetime, time, timedelta
 
 df_weather = pd.read_csv("data/weatherAUS.csv")
+df_weather = df_weather.fillna(df_weather.median())
+
 pjg_param = len(sys.argv)
 tanggal = []
 if(pjg_param == 3):
