@@ -261,13 +261,26 @@
                 
             <div class="" style="margin-left:10rem;">
                 <h2 style="color: black; font-weight: bold;">Range of Date</h2>
-                <form action="cuaca.php" method="POST">
+                <form id="form" action="cuaca.php" method="POST">
                     <label for="from">From:</label>
                     <input type="date" id="from" name="from">
                     
                     <label style="margin-left: 2rem;" for="to">To:</label>
-                    <input type="date" id="from" name="to">
-                    <input type="submit" value="Submit">
+                    <input type="date" id="to" name="to">
+                    <!-- <input type="submit" value="Submit"> -->
+                     <button type="button" onclick="submit()"></button>
+                     <script>
+                         function submit(){
+                             var from=document.getElementById("from").value;
+                             var to=document.getElementById("to").value;
+                            if(from.getTime()>to.getTime()){
+                                alert("From date must be less than to date");
+                            }
+                            else{
+                                document.getElementById("form").submit;
+                            }
+                         }
+                     </script>
                 </form>
             </div>
         </div>
